@@ -1,7 +1,7 @@
 // app/submit/page.tsx
-import { Navigation } from '@/components/navigation';
-import { MessageForm } from '@/components/message-form';
-import { createMessage } from '@/lib/db';
+import { Navigation } from '../components/navigation';
+import { MessageForm } from '../components/message-form';
+import { createMessage } from '../lib/db';
 import { redirect } from 'next/navigation';
 
 export default function Submit() {

@@ -1,8 +1,8 @@
 // app/details/[id]/page.tsx
-import { Navigation } from '@/components/navigation';
+import { Navigation } from '../../components/navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { getMessage } from '@/lib/db';
+import { getMessage } from '../../lib/db';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
