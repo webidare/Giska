@@ -1,6 +1,6 @@
 // app/page.tsx
-import { Navigation } from '@/components/navigation';
-import { MessageCarousel } from '@/components/message-carousel';
+import { Navigation } from '@app/components/navigation';
+import { MessageCarousel } from '@app/components/message-carousel';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
