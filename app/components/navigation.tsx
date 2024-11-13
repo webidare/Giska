@@ -1,21 +1,28 @@
 // app/components/navigation.tsx
-import { Home, Heart, Search } from 'lucide-react';
-import Link from 'next/link';
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
 
-export function Navigation() {
+export default function Navigation() {
   return (
-    <nav className="border-b">
-      <div className="flex h-16 items-center px-4">
-        <div className="flex items-center space-x-4">
-          <Link href="/" className="flex items-center space-x-2">
-            <Heart className="h-6 w-6" />
-            <span className="font-bold">Love Messages</span>
+    <nav className="bg-background border-b">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="text-2xl font-bold">
+            Giska
           </Link>
-          <Link href="/" className="text-sm font-medium">Home</Link>
-          <Link href="/submit" className="text-sm font-medium">Create</Link>
-          <Link href="/browse" className="text-sm font-medium">Browse</Link>
+          <div className="flex space-x-4">
+            <Button variant="ghost" asChild>
+              <Link href="/">Home</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/browse">Browse</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/submit">Submit</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </nav>
-  );
+  )
 }
