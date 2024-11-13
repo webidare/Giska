@@ -3,6 +3,14 @@ import Navigation from '../components/navigation';
 import { MessageForm } from '../components/message-form';
 import { createMessage } from '../lib/db';
 import { redirect } from 'next/navigation';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 export default function Submit() {
   async function handleSubmit(data: any) {
