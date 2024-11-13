@@ -3,8 +3,12 @@ import { Navigation } from './components/navigation';
 import { MessageCarousel } from './components/message-carousel';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { searchMessages } from './lib/db';
 
-export default function Home() {
+export default async function Home() {
+  // Fetch some recent messages
+  const recentMessages = await searchMessages('');
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -21,7 +25,7 @@ export default function Home() {
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Recent Messages</h2>
-            <MessageCarousel messages={[]} /> {/* Add sample messages or fetch from API */}
+            <MessageCarousel messages={recentMessages} />
           </div>
         </section>
       </main>
