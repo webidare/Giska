@@ -1,5 +1,5 @@
 // app/browse/page.tsx
-import { Navigation } from '../components/navigation';
+import Navigation from '../components/navigation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
