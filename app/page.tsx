@@ -1,40 +1,29 @@
 // app/page.tsx
-import { Navigation } from './components/navigation';
-import { MessageCarousel } from './components/message-carousel';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { searchMessages } from './lib/db';
 
-export default async function Home() {
-  // Fetch some recent messages
-  const recentMessages = await searchMessages('');
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import Navigation from "./components/navigation"
 
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      
-      <main className="flex-1">
-        <section className="py-20 text-center">
-          <h1 className="text-4xl font-bold mb-4">Send Love Messages</h1>
-          <p className="text-xl text-gray-600 mb-8">Express your feelings with our beautiful love messages</p>
-          <Link href="/submit">
-            <Button size="lg">Create Message</Button>
-          </Link>
-        </section>
-
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Recent Messages</h2>
-            <MessageCarousel messages={recentMessages} />
+      <main className="container mx-auto px-4 py-16">
+        <div className="text-center space-y-6">
+          <h1 className="text-5xl font-extrabold">Welcome to Giska</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Giska is a platform for sharing and discovering amazing things.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Button asChild size="lg">
+              <Link href="/browse">Browse</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/submit">Submit</Link>
+            </Button>
           </div>
-        </section>
-      </main>
-
-      <footer className="py-6 border-t">
-        <div className="container mx-auto text-center text-gray-600">
-          <p>Made with ❤️</p>
         </div>
-      </footer>
+      </main>
     </div>
-  );
+  )
 }
